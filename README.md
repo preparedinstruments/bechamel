@@ -21,6 +21,7 @@ A Lattice iCE40HX1K-based FPGA developement board for live-playable video experi
 - Relatively low-cost, single board design
 - HDMI and VGA out
 - Reverse polarity and fuse protection
+- Connections for raspberry pi flash programming and DPI video in
 
 # Minimal BOM :
 
@@ -50,7 +51,7 @@ optional extras : (1x Raspberry Pi Zero, 1x Micro SD holder, 2x 10kΩ potentiome
 
 [KiCAD and Eagle PCBs](https://github.com/preparedinstruments/bechamel/tree/main/PCB)
 
-![open_source](https://github.com/user-attachments/assets/3fbdfb6a-2741-4e5c-9634-7913a16e93b9) 
+![forgithub](https://github.com/user-attachments/assets/98a38d7d-9e5c-442e-bc27-7d2fbf7a9336)
 
 
 # HDL files
