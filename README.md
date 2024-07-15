@@ -70,7 +70,14 @@ To synthesize files :
 
 ![image](https://github.com/user-attachments/assets/38ef87e1-ef5c-4168-aa9f-647281c609ce)
 
-To program flash memory you can use raspberry pi or an Arduino (untested).
+To program flash memory you can use raspberry pi using these OLIMEX resources :
+
+- https://www.olimex.com/wiki/ICE40HX1K-EVB#Get_started_under_Linux
+- https://github.com/anse1/olimex-ice40-notes
+
+The programming connections :
+
+![image](https://github.com/user-attachments/assets/a652223b-fee8-409c-83ea-dc7b884e64b7)
 
 
 # Raspberry Pi DPI config file
