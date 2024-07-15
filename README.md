@@ -19,7 +19,7 @@ A Lattice iCE40HX1K-based FPGA developement board for lo-fi, live-playable video
 
 **WARNING: This video may potentially trigger seizures for people with photosensitive epilepsy. Viewer discretion is advised.**
 
-
+[![Demo video](https://raw.githubusercontent.com/username/repository/branch/path/to/thumbnail.jpg)](https://raw.githubusercontent.com/username/repository/branch/path/to/video.mp4)
 
 - 640x480 60Hz HDMI and VGA out, takes raspberry pi video in in DPI mode (https://pinout.xyz/pinout/dpi)
 - 9-key mechanical button interface on a hand-solderable, low-cost, single-board design
