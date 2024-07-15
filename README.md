@@ -15,7 +15,6 @@ A Lattice iCE40HX1K-based FPGA developement board for live-playable video experi
 
 
 
-
 # Features :
 
 - 9-key mechanical button interface
@@ -49,14 +48,14 @@ optional extras : (1x Raspberry Pi Zero, 1x Micro SD holder, 2x 10kΩ potentiome
 
 # PCB files
 
-[KiCAD and Eagle PCBs](https://github.com/merlinmarrs/iCE40HX-verilog-video-patterns/tree/main/PCB%20files)
+[KiCAD and Eagle PCBs](https://github.com/preparedinstruments/bechamel/tree/main/PCB)
 
 ![open_source](https://github.com/user-attachments/assets/3fbdfb6a-2741-4e5c-9634-7913a16e93b9) 
 
 
 # HDL files
 
-[Verilog, Pin constraints, and synthesized binaries ](https://github.com/merlinmarrs/iCE40HX-verilog-video-patterns/tree/main/verilog)
+[Verilog and Pin constraints files ](https://github.com/preparedinstruments/bechamel/tree/main/verilog)
 
 To compile and upload files :
 
