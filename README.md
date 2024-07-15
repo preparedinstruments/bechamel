@@ -2,7 +2,7 @@
 
 # Lo-Fi FPGA Video Art Board
 
-A Lattice iCE40HX1K-based FPGA developement board for lo-fi, live-playable video experiments.
+A Lattice iCE40HX1K-based FPGA developement board for lo-fi, live-playable video experiments ranging from the gnarly-glitch-filth to the understated minimalist compositional.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
