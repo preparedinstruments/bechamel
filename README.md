@@ -19,7 +19,8 @@ A Lattice iCE40HX1K-based FPGA developement board for lo-fi, live-playable video
 
 **WARNING: This video may potentially trigger seizures for people with photosensitive epilepsy. Viewer discretion is advised.**
 
-[![Demo video](https://github.com/preparedinstruments/bechamel/blob/main/bechamel_demo.PNG)](https://raw.githubusercontent.com/preparedinstruments/bechamel/blob/main/bechamel_demo.mp4)
+
+https://github.com/user-attachments/assets/2b71dbfc-7b5e-4651-8198-416c93c0dd36
 
 
 - 640x480 60Hz HDMI and VGA out, takes raspberry pi video in in DPI mode (https://pinout.xyz/pinout/dpi)
@@ -88,6 +89,18 @@ The programming connections :
 This config file sets the rpi in DPI mode at 50MHz. It can work with the rpi video pass thru verilog file.
 
 [config.txt](https://github.com/preparedinstruments/bechamel/tree/main/raspberry_pi)
+
+
+# FAQ
+
+Q: How dare you release into the wild verilog code this hideous ?
+
+A: Spank me daddy.
+
+Q: Is this even art ?
+
+A: I can't believe it's not butter! 
+
 
 # Acknowledgements
 
