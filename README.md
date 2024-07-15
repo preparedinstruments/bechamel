@@ -1,6 +1,6 @@
 ![bechamel_logo_Plan de travail 1](https://github.com/user-attachments/assets/a3b16d4a-b1e6-4357-a8fe-4a8e616bc0d5)
 
-# Lo-Fi FPGA Video Synthesis + Sampling Board
+# Lo-Fi FPGA Video Art Board
 
 A Lattice iCE40HX1K-based FPGA developement board for lo-fi, live-playable video experiments.
 
@@ -16,6 +16,10 @@ A Lattice iCE40HX1K-based FPGA developement board for lo-fi, live-playable video
 
 
 # Features :
+
+**WARNING: This video may potentially trigger seizures for people with photosensitive epilepsy. Viewer discretion is advised.**
+
+
 
 - 640x480 60Hz HDMI and VGA out, takes raspberry pi video in in DPI mode (https://pinout.xyz/pinout/dpi)
 - 9-key mechanical button interface on a hand-solderable, low-cost, single-board design
@@ -68,8 +72,6 @@ To synthesize files :
 
 [iCEcube2 Toolchain](https://www.latticesemi.com/iCEcube2)
 
-![image](https://github.com/user-attachments/assets/38ef87e1-ef5c-4168-aa9f-647281c609ce)
-
 To program flash memory you can use raspberry pi using these OLIMEX resources :
 
 - https://www.olimex.com/wiki/ICE40HX1K-EVB#Get_started_under_Linux
@@ -94,6 +96,8 @@ This config file sets the rpi in DPI mode at 50MHz. It can work with the rpi vid
 Mike Field <hamster@snap.net.nz> for his minimalDVID_encoder.vhd : A quick and dirty DVI-D implementation (https://gist.github.com/uXeBoy/0d46e2f1560f73dd573d83e78309bfa0)
 
 Iñigo Muguruza (imuguruza) for his VGA sync code : https://github.com/imuguruza/alhambra_II_test/blob/master/vga/vga_test/vga_sync.v
+
+NightMachines on Bytebeats : https://llllllll.co/t/bytebeats-a-beginner-s-guide/16491
 
 General verilog learning from HDL Bits : https://hdlbits.01xz.net/wiki/Main_Page
 
