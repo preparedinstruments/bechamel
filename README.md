@@ -24,7 +24,7 @@ A Lattice iCE40HX1K-based FPGA developement board for live-playable video experi
 
 # Minimal BOM :
 
-[Excel BOM Mouser / Digikey ](https://github.com/merlinmarrs/iCE40HX-verilog-video-patterns/tree/main/PCB%20files)
+[Excel BOM Mouser / Digikey ](https://github.com/preparedinstruments/bechamel/tree/main/BOM)
 
 - 9x Mechanical keyboard keys
 - 1x FPGA iCE40HX1K-TQ144
