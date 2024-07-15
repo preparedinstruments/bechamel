@@ -1,8 +1,8 @@
 ![bechamel_logo_Plan de travail 1](https://github.com/user-attachments/assets/a3b16d4a-b1e6-4357-a8fe-4a8e616bc0d5)
 
-# Video FPGA Dev Board
+# Lo-Fi FPGA Video Synthesis + Sampling Board
 
-A Lattice iCE40HX1K-based FPGA developement board for live-playable video experiments.
+A Lattice iCE40HX1K-based FPGA developement board for lo-fi, live-playable video experiments.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -17,13 +17,12 @@ A Lattice iCE40HX1K-based FPGA developement board for live-playable video experi
 
 # Features :
 
-- 9-key mechanical button interface
-- Relatively low-cost, single board design
-- HDMI and VGA out
-- Reverse polarity and fuse protection
-- Connections for raspberry pi flash programming and DPI video in
+- 640x480 60Hz HDMI and VGA out, takes raspberry pi video in in DPI mode (https://pinout.xyz/pinout/dpi)
+- 9-key mechanical button interface on a hand-solderable, low-cost, single-board design
+- 100MHz clock and a 256K x 8 bit external SRAM for screen buffer(s)
+- Connections for raspberry pi flash programming
 
-# Minimal BOM :
+# BOM :
 
 [Excel BOM Mouser / Digikey ](https://github.com/preparedinstruments/bechamel/tree/main/BOM)
 
@@ -44,7 +43,7 @@ A Lattice iCE40HX1K-based FPGA developement board for live-playable video experi
 - 5x LEDs 0805
 - 2x Dual-row headers
 
-optional extras : (1x Raspberry Pi Zero, 1x Micro SD holder, 2x 10kΩ potentiometers, 1x fast op-amp, 1x 3.5mm audio jack, 1x dual SMD dip switch, 1x SMD pushbutton)
+optional extras : (1x Raspberry Pi Zero, 1x Micro SD holder, 1x 10kΩ potentiometers)
 
 
 # PCB files
@@ -58,22 +57,25 @@ optional extras : (1x Raspberry Pi Zero, 1x Micro SD holder, 2x 10kΩ potentiome
 
 [Verilog and Pin constraints files ](https://github.com/preparedinstruments/bechamel/tree/main/verilog)
 
-To compile and upload files :
+To synthesize files :
 
 [Yoysis Open-source Toolchain ](https://github.com/YosysHQ/yosys)
 
 ![image](https://github.com/user-attachments/assets/e97e0af4-468f-498d-b59e-337a35ea7318)
 
+...or, request an iCEcube2 licence from Lattice :
 
 [iCEcube2 Toolchain](https://www.latticesemi.com/iCEcube2)
 
 ![image](https://github.com/user-attachments/assets/38ef87e1-ef5c-4168-aa9f-647281c609ce)
 
+To program flash memory you can use raspberry pi or an Arduino (untested).
 
 
-## Acknowledgements
+# Acknowledgements
 
-# Verilog :
+
+**Verilog** :
 
 Mike Field <hamster@snap.net.nz> for his minimalDVID_encoder.vhd : A quick and dirty DVI-D implementation (https://gist.github.com/uXeBoy/0d46e2f1560f73dd573d83e78309bfa0)
 
@@ -81,11 +83,13 @@ Iñigo Muguruza (imuguruza) for his VGA sync code : https://github.com/imuguruza
 
 General verilog learning from HDL Bits : https://hdlbits.01xz.net/wiki/Main_Page
 
-# FPGA Hardware design :
+**FPGA Hardware design** :
 
-OLIMEX FPGA dev board https://github.com/OLIMEX/iCE40HX1K-EVB/tree/master
+OLIMEX FPGA dev board : https://github.com/OLIMEX/iCE40HX1K-EVB/tree/master
 
-ALHAMBRA FPGA https://github.com/FPGAwars/Alhambra-II-FPGA/tree/master
+Alhambra II FPGA dev board : https://github.com/FPGAwars/Alhambra-II-FPGA/tree/master
 
 
+# TODO
 
+Get SD card reading functional
