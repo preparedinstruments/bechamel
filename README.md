@@ -77,7 +77,7 @@ To program flash memory you can use raspberry pi or an Arduino (untested).
 
 This config file sets the rpi in DPI mode at 50MHz. It can work with the rpi video pass thru verilog file.
 
-[config.txt](https://github.com/YosysHQ/yosys)
+[config.txt](https://github.com/preparedinstruments/bechamel/tree/main/raspberry_pi)
 
 # Acknowledgements
 
