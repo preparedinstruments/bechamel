@@ -22,6 +22,14 @@ A Lattice iCE40HX1K-based FPGA developement board for lo-fi, live-playable video
 - 100MHz clock and a 256K x 8 bit external SRAM for screen buffer(s)
 - Connections for raspberry pi flash programming
 
+
+# PCB files
+
+[KiCAD and Eagle PCBs](https://github.com/preparedinstruments/bechamel/tree/main/PCB)
+
+![forgithub](https://github.com/user-attachments/assets/98a38d7d-9e5c-442e-bc27-7d2fbf7a9336)
+
+
 # BOM :
 
 [Excel BOM Mouser / Digikey ](https://github.com/preparedinstruments/bechamel/tree/main/BOM)
@@ -46,13 +54,6 @@ A Lattice iCE40HX1K-based FPGA developement board for lo-fi, live-playable video
 optional extras : (1x Raspberry Pi Zero, 1x Micro SD holder, 1x 10kΩ potentiometers)
 
 
-# PCB files
-
-[KiCAD and Eagle PCBs](https://github.com/preparedinstruments/bechamel/tree/main/PCB)
-
-![forgithub](https://github.com/user-attachments/assets/98a38d7d-9e5c-442e-bc27-7d2fbf7a9336)
-
-
 # HDL files
 
 [Verilog and Pin constraints files ](https://github.com/preparedinstruments/bechamel/tree/main/verilog)
@@ -71,6 +72,12 @@ To synthesize files :
 
 To program flash memory you can use raspberry pi or an Arduino (untested).
 
+
+# Raspberry Pi DPI config file
+
+This config file sets the rpi in DPI mode at 50MHz. It can work with the rpi video pass thru verilog file.
+
+[config.txt](https://github.com/YosysHQ/yosys)
 
 # Acknowledgements
 
