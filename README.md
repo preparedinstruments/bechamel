@@ -72,11 +72,19 @@ To compile and upload files :
 
 ## Acknowledgements
 
-Mike Field <hamster@snap.net.nz> for his minimalDVID_encoder.vhd : A quick and dirty DVI-D implementation
+# Verilog :
+
+Mike Field <hamster@snap.net.nz> for his minimalDVID_encoder.vhd : A quick and dirty DVI-D implementation (https://gist.github.com/uXeBoy/0d46e2f1560f73dd573d83e78309bfa0)
+
+Iñigo Muguruza (imuguruza) for his VGA sync code : https://github.com/imuguruza/alhambra_II_test/blob/master/vga/vga_test/vga_sync.v
+
+General verilog learning from HDL Bits : https://hdlbits.01xz.net/wiki/Main_Page
+
+# FPGA Hardware design :
 
 OLIMEX FPGA dev board https://github.com/OLIMEX/iCE40HX1K-EVB/tree/master
 
 ALHAMBRA FPGA https://github.com/FPGAwars/Alhambra-II-FPGA/tree/master
 
-HDL Bits https://hdlbits.01xz.net/wiki/Main_Page
+
 
