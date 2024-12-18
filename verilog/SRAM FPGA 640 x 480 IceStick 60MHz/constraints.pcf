@@ -1,0 +1,9 @@
+set_io clk_in 21
+set_io h_sync 80
+set_io v_sync 79
+set_io r0 78
+set_io g0 87
+set_io b0 88
+
+set_io reset 91
+set_io locked_led 95
