@@ -1,76 +1,37 @@
-
 module verilog(
 
-output reg h_sync,
-output reg v_sync,
 
+	   input FPGA_clk,
+
+      input wire rpi_DEN,
       input wire rec, 
-      input wire  clk,
+      input wire  rpi_clk,
+      input wire  rpi_h_sync,
+      input wire  rpi_v_sync,
       input wire  rpi_color, 
       
+
 	  	output reg [17:0] addr,
        inout wire [7:0] io,
 		output wire cs,
 		output reg we,
 		output wire oe,
 
+      output wire  h_sync,
+      output wire  v_sync,
       output reg  [3:0] r_out, 
       output reg  [3:0] g_out,
       output reg  [3:0] b_out
       );
 
-// Pixel counters
-reg [11:0] h_counter = 0;
-reg [11:0] v_counter = 0;
-
-
-localparam h_pixel_total = 1040;
-localparam h_pixel_display = 800;
-localparam h_pixel_front_porch_amount = 56;
-localparam h_pixel_sync_amount = 120;
-localparam h_pixel_back_porch_amount = 64;
-
-localparam v_pixel_total = 666;
-localparam v_pixel_display = 600;
-localparam v_pixel_front_porch_amount = 37;
-localparam v_pixel_sync_amount = 6;
-localparam v_pixel_back_porch_amount = 23;
-
-always @(posedge clk) begin
-
-	//Check if horizontal has arrived to the end
-	if (h_counter >= h_pixel_total)
-		begin
-		h_counter <= 0;
-		v_counter <= v_counter + 1;
-		end
-	else
-	//horizontal increment pixel value
-		h_counter <= h_counter + 1;
-	// check if vertical has arrived to the end
-	if (v_counter >= v_pixel_total)
-		v_counter <= 0;
-	
-end
-
-always @(posedge clk) begin
-// Check if sync_pulse needs to be created
-if (h_counter >= (h_pixel_display + h_pixel_front_porch_amount)
-&& h_counter < (h_pixel_display + h_pixel_front_porch_amount + h_pixel_sync_amount) )
-h_sync <= 0;
-else
-h_sync <= 1;
-// Check if sync_pulse needs to be created
-if (v_counter >= (v_pixel_display + v_pixel_front_porch_amount)
-&& v_counter < (v_pixel_display + v_pixel_front_porch_amount + v_pixel_sync_amount) )
-v_sync <= 0;
-else
-v_sync <= 1;
-end
-
 assign cs = 0; 
 assign oe = 0; 
 
+assign h_sync = rpi_h_sync;
+
+assign v_sync = rpi_v_sync;
+
+wire sys_clk;
 
 wire [7:0] data_in;
 wire [7:0] data_out;
@@ -85,14 +46,23 @@ assign data_out = b;
         
 reg [3:0] counter = 0; //our clock divider
 
+reg [3:0] FPGA_clk_div = 0; //our clock divider
+
+always @(posedge FPGA_clk) begin
+
+  FPGA_clk_div <= FPGA_clk_div + 1;
+end
+
+assign sys_clk = (rec==0) ? rpi_clk : FPGA_clk_div[0];
+
 //SRAM address counter
-always @(posedge clk) begin
+always @(posedge sys_clk) begin
 
   counter <= counter + 1;
 
   if (counter[1]) begin
 
-    	if(v_sync) begin // reset the SRAM each time we draw a new frame
+    	if(rpi_v_sync) begin // reset the SRAM each time we draw a new frame
 			addr <= 0;
     	end
 

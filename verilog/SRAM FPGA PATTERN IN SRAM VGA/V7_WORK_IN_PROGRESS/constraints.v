@@ -1,10 +1,38 @@
-set_io clk 49
-set_io rpi_color 52
+set_io hdmi_p[0] 139 -io_std SB_LVCMOS
+set_io hdmi_p[2] 78 -io_std SB_LVCMOS
+set_io hdmi_p[1] 80 -io_std SB_LVCMOS
+set_io hdmi_p[3] 137 -io_std SB_LVCMOS
 
-set_io h_sync 76
-set_io v_sync 97
+set_io hdmi_n[0] 138 -io_std SB_LVCMOS
+set_io hdmi_n[2] 79 -io_std SB_LVCMOS
+set_io hdmi_n[1] 81 -io_std SB_LVCMOS
+set_io hdmi_n[3] 136 -io_std SB_LVCMOS
 
+set_io key[0] 37
+set_io key[1] 38
+set_io key[2] 39
+set_io key[3] 41
+set_io key[4] 42
+set_io key[5] 43
+set_io key[6] 44
+set_io key[7] 45
 set_io rec 47
+
+set_io SCK 32
+set_io CMD 33
+
+set_io LED1 29
+set_io LED5 28
+
+set_io reset 66
+
+set_io clk_in 49
+
+set_io b_in 63
+set_io rpi_pixel_clock 61
+set_io rpi_hsync 52
+set_io rpi_vsync 58
+set_io rpi_DEN 62
 
 set_io r_out[0] 91 //for vga
 set_io r_out[1] 95 //for vga
@@ -17,6 +45,9 @@ set_io b_out[2] 90 //for vga
 set_io g_out[0] 75 //for vga
 set_io g_out[1] 74 //for vga
 set_io g_out[2] 73 //for vga
+
+set_io v_sync 97 //for vga
+set_io h_sync 76 //for vga
 
 set_io io[0] 7
 set_io io[1] 8

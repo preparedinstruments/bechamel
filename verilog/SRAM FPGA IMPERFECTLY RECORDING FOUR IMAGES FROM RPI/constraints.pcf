@@ -1,5 +1,11 @@
-set_io clk 49
+set_io clk 58
+
+set_io rpi_h_sync 62
+set_io rpi_v_sync 61
 set_io rpi_color 52
+
+set_io key1 44
+set_io key2 45
 
 set_io h_sync 76
 set_io v_sync 97
@@ -43,8 +49,9 @@ set_io addr[12] 135
 set_io addr[13] 119
 set_io addr[14] 134
 set_io addr[15] 116
-set_io addr[16] 129
-set_io addr[17] 128
+
+set_io bank1 129
+set_io bank2 128
 
 
 set_io cs 25

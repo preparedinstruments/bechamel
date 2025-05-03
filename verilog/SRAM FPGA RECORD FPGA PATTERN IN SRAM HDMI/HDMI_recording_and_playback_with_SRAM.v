@@ -16,7 +16,7 @@
 // leaving a simple implementation. Combined with a DDR register to
 // send the symbols the complexity is kept very low.
 //-----------------------------------------------------------------
-//
+
 module top(
 clk100, hdmi_p, hdmi_n, rec, addr, io, cs, we, oe, key, reset
 );

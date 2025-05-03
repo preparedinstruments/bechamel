@@ -1,0 +1,4 @@
+set_io clk 20
+
+set_io LED 82
+

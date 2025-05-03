@@ -1,0 +1,159 @@
+module verilog(
+
+
+	   input FPGA_clk,
+
+      input wire rec, 
+      input wire rec2, 
+      input wire  rpi_clk,
+      input wire  rpi_h_sync,
+      input wire  rpi_v_sync,
+      input wire  rpi_color, 
+      
+	   output wire  top_addr,
+	   output reg [16:0] addr,
+       inout wire [7:0] io,
+	   output wire cs,
+	   output reg we,
+	   output wire oe,
+
+      output wire  h_sync,
+      output wire  v_sync,
+      output reg  [3:0] r_out, 
+      output reg  [3:0] g_out,
+      output reg  [3:0] b_out
+      );
+
+
+assign cs = 0; 
+assign oe = 0; 
+
+assign h_sync = rpi_h_sync;
+
+assign v_sync = rpi_v_sync;
+
+wire sys_clk;
+
+reg toggle;
+
+wire [7:0] data_in;
+wire [7:0] data_out;
+
+assign data_in[7:0] = (rpi_color == 1'b1) ? 8'b11111111 : 8'b00000000; // color from rpi
+
+reg [7:0] a, b;
+
+assign io = (rec==0 || rec2==0) ? a : 8'bzzzzzzzz;
+
+assign data_out = b;
+
+        
+reg [3:0] counter = 0; //our clock divider
+
+reg [3:0] FPGA_clk_div = 0; //our clock divider
+
+always @(posedge FPGA_clk) begin
+
+  FPGA_clk_div <= FPGA_clk_div + 1;
+
+end
+
+assign top_addr = (rec2==0 || toggle ==0 ) ? 1'b1 : 1'b0;
+
+assign sys_clk = ((rec==0) ||(rec2==0)) ? rpi_clk : FPGA_clk_div[0];
+
+//SRAM address counter
+always @(posedge sys_clk) begin
+
+  counter <= counter + 1;
+
+  if (counter[1]) begin
+
+    	if(rpi_v_sync) begin // reset the SRAM each time we draw a new frame
+			addr <= 0;
+			toggle <= ~toggle;
+    	end
+				
+		else begin
+			addr <= addr+1;			
+		end
+  end
+end 
+
+always @(posedge counter[1]) begin
+      b <= io;
+      a <= data_in;
+
+	 		if(rec==0 || rec2==0) begin
+		        we <= addr[0]; //not sure why it isn't the inverse of addr[0] but that doesn't make the inverse on 'scope
+			end
+
+     else begin
+          we <= 1;
+     end
+end
+
+always @(posedge counter[1]) begin
+
+		if ((rec==0 ||rec2==0)  && (a==8'b11111111))
+			begin
+				r_out[0] <= 1'b0;
+				r_out[1] <= 1'b0;
+				r_out[2] <= 1'b0;
+
+				b_out[0] <= 1'b0;
+				b_out[1] <= 1'b0;
+				b_out[2] <= 1'b0;
+
+				g_out[0] <= 1'b0;
+				g_out[1] <= 1'b0;
+				g_out[2] <= 1'b0;
+			end
+
+		else if ((rec==0 ||rec2==0) && (a==8'b00000000))
+			begin
+					r_out[0] <= 1'b1;
+					r_out[1] <= 1'b1;
+					r_out[2] <= 1'b1;
+
+					b_out[0] <= 1'b1;
+					b_out[1] <= 1'b1;
+					b_out[2] <= 1'b1;
+
+					g_out[0] <= 1'b1;
+					g_out[1] <= 1'b1;
+					g_out[2] <= 1'b1;
+			end
+
+		else if ((rec==1 ||rec2==1 ) && (b==8'b11111111)) //data_out not b ??
+		begin
+				r_out[0] <= 1'b1;
+				r_out[1] <= 1'b1;
+				r_out[2] <= 1'b1;
+
+				b_out[0] <= 1'b1;
+				b_out[1] <= 1'b1;
+				b_out[2] <= 1'b1;
+
+				g_out[0] <= 1'b1;
+				g_out[1] <= 1'b1;
+				g_out[2] <= 1'b1;
+		end
+		else
+		begin
+				r_out[0] <= 1'b0;
+				r_out[1] <= 1'b0;
+				r_out[2] <= 1'b0;
+
+				b_out[0] <= 1'b0;
+				b_out[1] <= 1'b0;
+				b_out[2] <= 1'b0;
+
+				g_out[0] <= 1'b0;
+				g_out[1] <= 1'b0;
+				g_out[2] <= 1'b0;
+		end	
+end
+
+
+endmodule

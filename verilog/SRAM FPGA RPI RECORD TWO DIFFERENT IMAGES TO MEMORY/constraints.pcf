@@ -1,10 +1,15 @@
-set_io clk 49
+set_io rpi_clk 58
+set_io FPGA_clk 49
+
+set_io rpi_h_sync 62
+set_io rpi_v_sync 61
 set_io rpi_color 52
 
 set_io h_sync 76
 set_io v_sync 97
 
 set_io rec 47
+set_io rec2 45
 
 set_io r_out[0] 91 //for vga
 set_io r_out[1] 95 //for vga
@@ -44,8 +49,7 @@ set_io addr[13] 119
 set_io addr[14] 134
 set_io addr[15] 116
 set_io addr[16] 129
-set_io addr[17] 128
-
+set_io top_addr 128
 
 set_io cs 25
 set_io oe 23

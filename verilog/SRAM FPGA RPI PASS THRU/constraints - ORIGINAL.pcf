@@ -1,0 +1,20 @@
+set_io clk 58
+
+set_io rpi_h_sync 62
+set_io rpi_v_sync 61
+set_io rpi_color 52
+
+set_io h_sync 76
+set_io v_sync 97
+
+set_io r_out[0] 91 //for vga
+set_io r_out[1] 95 //for vga
+set_io r_out[2] 96 //for vga
+
+set_io b_out[0] 87 //for vga
+set_io b_out[1] 88 //for vga
+set_io b_out[2] 90 //for vga
+
+set_io g_out[0] 75 //for vga
+set_io g_out[1] 74 //for vga
+set_io g_out[2] 73 //for vga
